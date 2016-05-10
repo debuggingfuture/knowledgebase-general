@@ -19,10 +19,10 @@
 - https://wiki.postgresql.org/images/3/35/Pagination_Done_the_PostgreSQL_Way.pdf
 
 
-##### Working against empty timestamp in text (Not sure why '' check don't work)
+##### Working against empty timestamp in text 
 ```
- (CASE updated_at
- WHEN updated_at THEN updated_at::timestamp
- ELSE timestamp 'epoch'
- END) desc;
+ (CASE (updated_at is null) 
+ WHEN true THEN timestamp 'epoch'
+ ELSE updated_at
+ END) desc limit 100;
  ```
