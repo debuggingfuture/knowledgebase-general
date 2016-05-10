@@ -24,8 +24,4 @@
 
 ORDER BY updated_at NULLS FIRST
 
- (CASE (updated_at is null) 
- WHEN true THEN timestamp 'epoch'
- ELSE updated_at
- END) desc limit 100;
  ```
