@@ -22,6 +22,6 @@
 ##### Working against empty timestamp in text 
 ```
 
-ORDER BY updated_at NULLS FIRST
+ORDER BY updated_at NULLS LAST
 
  ```
