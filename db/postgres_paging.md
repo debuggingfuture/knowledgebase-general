@@ -21,6 +21,9 @@
 
 ##### Working against empty timestamp in text 
 ```
+
+ORDER BY updated_at NULLS FIRST
+
  (CASE (updated_at is null) 
  WHEN true THEN timestamp 'epoch'
  ELSE updated_at
